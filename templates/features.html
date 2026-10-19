@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - ResQCharge Alert System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/features.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}" class="nav-logo-link">ResQCharge</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="dashboard" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="subscription" class="nav-link">Subscription</a></li>
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <h1 class="title glitch" data-text="ResQCharge Features">ResQCharge Features</h1>
+            <p class="subtitle">AI-powered tools for smarter EV driving</p>
+            <div class="underline"></div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Battery Health Prediction -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972424.png" alt="Battery Health" class="floating">
+                    </div>
+                    <h3>Battery Health Prediction</h3>
+                    <p>Predicts degradation, detects early battery wear, and alerts the user when maintenance is required.</p>
+                </div>
+
+                <!-- Smart Range Estimation -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" alt="Range Estimation" class="floating">
+                    </div>
+                    <h3>Smart Range Estimation</h3>
+                    <p>Calculates realistic range using terrain, weather, traffic, speed patterns, and AC usage.</p>
+                </div>
+
+                <!-- AI Route Optimization -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="AI Route" class="floating">
+                    </div>
+                    <h3>AI Route Optimization</h3>
+                    <p>Finds the most energy-efficient route using live station data, traffic conditions, and battery predictions.</p>
+                </div>
+
+                <!-- Mobile Charging Van Integration -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3097/3097841.png" alt="Charging Van" class="floating">
+                    </div>
+                    <h3>Mobile Charging Van Integration</h3>
+                    <p>Sends an on-demand EV charging van when battery is critically low and no station is nearby.</p>
+                </div>
+
+                <!-- SmartCharge Plus Analytics -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <img src=" https://cdn-icons-png.flaticon.com/512/2580/2580335.png" alt="Premium Analytics" class="floating">
+                    </div>
+                    <h3>ResQCharge Plus Analytics</h3>
+                    <p>Unlocks advanced analytics for premium users: cost analysis, battery insights, and predictive maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infographics Section -->
+    <section class="infographics-section">
+        <div class="container">
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">lower station wait times</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">average cost savings per trip</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="35">0</div>
+                    <div class="stat-label">better route efficiency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why SmartCharge Banner -->
+    <section class="banner-section">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>Why ResQCharge?</h2>
+                    <p>ResQCharge isn't just an EV tool — it's a predictive assistant. Using AI, machine learning, and real-time charging insights, it ensures stress-free electric driving.</p>
+                </div>
+                <div class="banner-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3344/3344484.png" alt="AI EV Integration" class="pulse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <a href="{{ url_for('dashboard') }}" class="cta-button">
+                Explore the Smart Dashboard →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ResQCharge Technologies — Smarter EV Journeys</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/features.js') }}"></script>
+</body>
+</html>

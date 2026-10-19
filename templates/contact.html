@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact | ResQCharge Alert System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}">ResQCharge</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('features') }}" class="nav-link">Features</a>
+                <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+                <a href="{{ url_for('subscription') }}" class="nav-link">Subscription</a>
+                <a href="{{ url_for('contact') }}" class="nav-link active">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">About ResQCharge</h1>
+                <p class="hero-subtitle">Eliminating range anxiety with AI-driven charging intelligence.</p>
+                <p class="hero-description">ResQCharge combines battery analytics, live station data, and mobile van dispatch to make EV driving reliable and stress-free.</p>
+                <a href="{{ url_for('dashboard') }}" class="cta-button">Try Dashboard</a>
+            </div>
+            <div class="hero-visual">
+                <img src="{{ url_for('static', filename='images/about-hero.png') }}" alt="ResQCharge AI and EV Visualization" class="hero-image">
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="mission-vision">
+            <div class="container">
+                <div class="cards-container">
+                    <div class="card mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Mission</h3>
+                        <p>To empower EV drivers with proactive battery insights and reliable on-demand charging.</p>
+                    </div>
+                    <div class="card vision-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Vision</h3>
+                        <p>A future where EVs travel confidently — supported by data, AI, and seamless infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <!--<section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Monitor</h3>
+                        <p>Continuously track battery, temperature, and usage.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Predict</h3>
+                        <p>AI analyzes patterns to predict range and battery health.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h3>Assist</h3>
+                        <p>Routes you to the best chargers or dispatch a mobile van if needed.</p>
+                    </div>
+                </div>
+                <div class="connector-line"></div>
+            </div>
+        </section>-->
+
+
+        <!-- Team Section -->
+        <!--<section class="team">
+            <div class="container">
+                <h2 class="section-title">Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="{{ url_for('static', filename='images/team1.png') }}" alt="Palak Khatri">
+                        </div>
+                        <h3>Palak Khatri</h3>
+                        <p class="team-role">Product Lead</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="team-bio">
+                            <p>Leading product strategy with 8+ years in EV technology and user experience design.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="{{ url_for('static', filename='images/team2.png') }}" alt="Alex Chen">
+                        </div>
+                        <h3>Alex Chen</h3>
+                        <p class="team-role">AI Engineer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="team-bio">
+                            <p>Specializes in machine learning algorithms for battery prediction and optimization.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="{{ url_for('static', filename='images/team3.png') }}" alt="Maria Rodriguez">
+                        </div>
+                        <h3>Maria Rodriguez</h3>
+                        <p class="team-role">Operations Director</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="team-bio">
+                            <p>Manages charging network partnerships and mobile van deployment strategies.</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="{{ url_for('static', filename='images/team4.png') }}" alt="David Kim">
+                        </div>
+                        <h3>David Kim</h3>
+                        <p class="team-role">Full Stack Developer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <div class="team-bio">
+                            <p>Builds the scalable infrastructure that powers our real-time monitoring systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-form-container">
+                        <form id="contact-form" action="{{ url_for('contact') }}" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="plan">Plan Interest</label>
+                                <select id="plan" name="plan">
+                                    <option value="">Select a plan</option>
+                                    <option value="Basic">Basic</option>
+                                    <option value="Plus">Plus</option>
+                                    <option value="Pro">Pro</option>
+                                    <option value="Premium">Premium</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            <button type="submit" class="submit-btn" id="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <div class="btn-loader"></div>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-info">
+                            <h3>Contact Details</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <p>Email</p>
+                                    <a href="mailto:support@ResQCharge.example">support@ResQCharge.example</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <p>Phone</p>
+                                    <a href="tel:+919876543210">+91 98765 43210</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <p>Office</p>
+                                    <span>ResQCharge Technologies, Jaipur, India</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-thumbnail" id="map-thumb">
+                            <img src="{{ url_for('static', filename='images/map-thumb.png') }}" alt="ResQCharge Office Location">
+                            <div class="map-overlay">Click to view larger map</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How does the mobile van service work?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>When our AI detects you're at risk of running out of charge with no nearby stations, it automatically dispatches a mobile charging van to your location. The van provides enough charge to get you to the nearest station or your destination.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What regions do you cover?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We currently cover major metropolitan areas across India including Delhi-NCR, Mumbai, Bangalore, Hyderabad, and Chennai. We're expanding to 15 more cities by the end of 2025.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How accurate is range estimation?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our AI-powered range estimation is 94% accurate, factoring in real-time traffic, weather, elevation, driving patterns, and battery health. This accuracy improves as the system learns your specific driving habits.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do subscriptions and van charges work?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Subscription plans include monitoring and prediction features. Mobile van service is pay-per-use with discounted rates for subscribers. Charges are based on distance traveled and charge provided, with transparent pricing shown before confirmation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="{{ url_for('home') }}">Home</a>
+                    <a href="{{ url_for('features') }}">Features</a>
+                    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                    <a href="{{ url_for('subscription') }}">Subscription</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ResQCharge Technologies — All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span class="toast-message">Message sent — we'll reply soon.</span>
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div class="modal" id="map-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h3>Our Location</h3>
+            <div class="modal-map">
+                <img src="{{ url_for('static', filename='images/map-full.png') }}" alt="ResQCharge Office Location Map">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/about_contact.js') }}"></script>
+</body>
+</html>

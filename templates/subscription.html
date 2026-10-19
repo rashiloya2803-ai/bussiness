@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQCharge Plans - Premium EV Charging Solutions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/subscription.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bolt"></i>
+                <span>ResQCharge</span>
+            </div>
+            <div class="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('features') }}" class="nav-link">Features</a>
+                <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+                <a href="{{ url_for('subscription') }}" class="nav-link active">Subscription</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Choose Your ResQCharge Plan</h1>
+                <p class="hero-subtitle">Smarter, faster, and safer EV journeys with AI-powered features.</p>
+                <div class="glowing-underline"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Plans Grid -->
+    <section class="plans-section">
+        <div class="container">
+            <div class="plans-grid">
+
+                <!--van -->
+                 <div class="plan-card" data-plan="vanFee">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="plan-title">ResQCharge Van</h3>
+                        <div class="plan-badge pro">vanFee</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">₹300</span>
+                        <span class="period">/vancost</span>
+                    </div>
+                    
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i>No need of subscription</li>
+                        <li><i class="fas fa-check"></i>Charging at cost of 22kw/hr</li>
+                        
+                        
+                    </ul>
+                    <button class="plan-btn pro-btn">Book a van</button>
+                </div>
+
+                <!-- Plan 1 - Basic -->
+                <div class="plan-card" data-plan="basic">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="plan-title">ResQCharge Basic</h3>
+                        <div class="plan-badge free">Free</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">₹0</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Battery Monitoring</li>
+                        <li><i class="fas fa-check"></i> Basic Range Estimation</li>
+                        <li><i class="fas fa-check"></i> Nearest Station Locator</li>
+                        <li><i class="fas fa-info-circle"></i> Van Access: Available on request</li>
+                    </ul>
+                    <button class="plan-btn basic-btn">Get Started</button>
+                </div>
+
+                <!-- Plan 2 - Plus -->
+                <div class="plan-card" data-plan="plus">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="plan-title">ResQCharge Plus</h3>
+                        <div class="plan-badge popular">Popular</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">₹249</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="plan-savings">Save ₹99 yearly (₹2499/year)</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> AI Route Optimization</li>
+                        <li><i class="fas fa-check"></i> Smart Alerts & Reminders</li>
+                        <li><i class="fas fa-check"></i> Battery Health Reports</li>
+                        <li><i class="fas fa-check"></i> Live Pricing Comparison</li>
+                        <li><i class="fas fa-shuttle-van"></i> Van Access: Priority + Faster Dispatch</li>
+                    </ul>
+                    <button class="plan-btn plus-btn">Upgrade to Plus</button>
+                </div>
+
+                <!-- Plan 3 - Pro -->
+                <div class="plan-card" data-plan="pro">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="plan-title">ResQCharge Pro</h3>
+                        <div class="plan-badge pro">Pro</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">₹499</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="plan-savings">Save ₹989 yearly (₹4999/year)</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Plus Features</li>
+                        <li><i class="fas fa-check"></i> Live Route Tracking</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics Dashboard</li>
+                        <li><i class="fas fa-check"></i> Predictive Maintenance</li>
+                        <li><i class="fas fa-shuttle-van"></i> Van Access: 10% Discount + Faster Response</li>
+                    </ul>
+                    <button class="plan-btn pro-btn">Upgrade to Pro</button>
+                </div>
+
+                <!-- Plan 4 - Premium -->
+                <div class="plan-card premium" data-plan="premium">
+                    <div class="plan-header">
+                        <div class="plan-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="plan-title">ResQCharge Premium</h3>
+                        <div class="plan-badge premium-badge">Best Value</div>
+                    </div>
+                    <div class="plan-price">
+                        <span class="price">₹599</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="plan-savings">Save ₹1189 yearly (₹5999/year)</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Pro Features</li>
+                        <li><i class="fas fa-check"></i> 24/7 Priority Van Access</li>
+                        <li><i class="fas fa-check"></i> Full Analytics Suite</li>
+                        <li><i class="fas fa-check"></i> Personal EV Consultant</li>
+                        <li><i class="fas fa-shuttle-van"></i> First 2 Van Services FREE + 25% Discount</li>
+                    </ul>
+                    <button class="plan-btn premium-btn">Go Premium</button>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Van Access Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Van Access Comparison</h2>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="table-cell feature-head">Feature</div>
+                    <div class="table-cell">Basic</div>
+                    <div class="table-cell">Plus</div>
+                    <div class="table-cell">Pro</div>
+                    <div class="table-cell premium-cell">Premium</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell feature">Van Request</div>
+                    <div class="table-cell"><i class="fas fa-check success"></i> Normal</div>
+                    <div class="table-cell"><i class="fas fa-check success"></i> Priority</div>
+                    <div class="table-cell"><i class="fas fa-check success"></i> Faster</div>
+                    <div class="table-cell premium-cell"><i class="fas fa-check success"></i> Fastest</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell feature">Free Van Use</div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell premium-cell"><i class="fas fa-check success"></i> First 2 Free</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell feature">Discount</div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell"><i class="fas fa-check success"></i> 10%</div>
+                    <div class="table-cell premium-cell"><i class="fas fa-check success"></i> 25%</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell feature">24/7 Access</div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell"><i class="fas fa-times error"></i></div>
+                    <div class="table-cell"><i class="fas fa-check partial"></i> Partial</div>
+                    <div class="table-cell premium-cell"><i class="fas fa-check success"></i> Full</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Subscribe Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-content">
+                <div class="why-text">
+                    <h2 class="section-title">Why Choose ResQCharge?</h2>
+                    <p class="why-description">
+                        ResQCharge subscription plans offer real-time intelligence, priority support, 
+                        advanced analytics, and guaranteed mobile charging access — ensuring that 
+                        you never get stranded on your EV journeys.
+                    </p>
+                    <div class="why-features">
+                        <div class="why-feature">
+                            <i class="fas fa-brain"></i>
+                            <span>AI-Powered Intelligence</span>
+                        </div>
+                        <div class="why-feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Real-time Monitoring</span>
+                        </div>
+                        <div class="why-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Priority Support</span>
+                        </div>
+                        <div class="why-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Advanced Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-car-battery"></i>
+                        <p>EV Charging Illustration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Experience Smart EV Charging?</h2>
+                <p class="cta-subtitle">Try our interactive dashboard and see the future of EV charging</p>
+                <a href="{{ url_for('dashboard') }}" class="cta-btn">
+                    Try Smart Dashboard <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2025 ResQCharge Technologies — Smarter EV Journeys
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/subscription.js') }}"></script>
+</body>
+</html>

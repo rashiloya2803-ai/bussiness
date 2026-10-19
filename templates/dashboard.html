@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQCharge Live Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Futuristic Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bolt"></i>
+                <span>ResQCharge</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="dashboard" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="subscription" class="nav-link">Subscription</a></li>
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-container">
+        <!-- 1️⃣ Dashboard Header -->
+        <section class="dashboard-header">
+            <h1 class="header-title">ResQCharge Live Dashboard</h1>
+            <p class="header-subtitle">Real-time EV Monitoring & Smart Analytics</p>
+            <div class="glowing-underline"></div>
+        </section>
+
+        <!-- Main Grid Layout -->
+        <div class="dashboard-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- 2️⃣ Interactive Battery Panel -->
+                <section class="card battery-panel">
+                    <h2 class="card-title">Battery Health</h2>
+                    <div class="battery-container">
+                        <div class="battery-ring">
+                            <div class="battery-circle">
+                                <span class="battery-percent">65%</span>
+                                <div class="battery-glow"></div>
+                            </div>
+                        </div>
+                        <button class="analyze-btn" id="analyzeBattery">
+                            <i class="fas fa-chart-line"></i>
+                            Analyze Battery
+                        </button>
+                    </div>
+                </section>
+
+                <!-- 3️⃣ Smart Range Estimation -->
+                <section class="card range-estimation">
+                    <h2 class="card-title">Range Estimation</h2>
+                    <div class="range-cards">
+                        <div class="range-card standard">
+                            <h3>Standard Range</h3>
+                            <div class="range-value">120 km</div>
+                        </div>
+                        <div class="range-card smart">
+                            <h3>Smart Estimated Range</h3>
+                            <div class="range-value" id="smartRange">145 km</div>
+                        </div>
+                    </div>
+                    <div class="range-toggles">
+                        <div class="toggle-item">
+                            <span>Terrain</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="terrainToggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <span>AC</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="acToggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <span>Weather</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="weatherToggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <span>Traffic</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="trafficToggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Center Column -->
+            <div class="center-column">
+                <!-- 4️⃣ AI Route Optimization Map -->
+                <section class="card map-section">
+                    <h2 class="card-title">AI Route Optimization</h2>
+                    <div class="map-container">
+                        <div class="mock-map" id="mockMap">
+                            <!-- Map markers -->
+                            <div class="map-marker user-location">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="map-marker charging-station">
+                                <i class="fas fa-charging-station"></i>
+                            </div>
+                            <div class="map-marker van-icon">
+                                <i class="fas fa-shuttle-van"></i>
+                            </div>
+                            <div class="route-line" id="routeLine"></div>
+                        </div>
+                        <button class="optimize-btn" id="optimizeRoute">
+                            <i class="fas fa-route"></i>
+                            Optimize Route
+                        </button>
+                    </div>
+                </section>
+
+                <!-- 5️⃣ Mobile Charging Van Request -->
+                <section class="card van-request">
+                    <h2 class="card-title">Mobile Charging Service</h2>
+                    <div class="van-info">
+                        <div class="van-details">
+                            <i class="fas fa-shuttle-van"></i>
+                            <div>
+                                <h3>Nearest Van</h3>
+                                <p>Van #A12 — <span id="vanDistance">3.1 km</span> away</p>
+                            </div>
+                        </div>
+                        <button class="request-btn" id="requestVan">
+                            <i class="fas fa-bell"></i>
+                            Request Van
+                        </button>
+                    </div>
+                    <div class="van-animation-container">
+                        <div class="road-line"></div>
+                        <div class="van-moving" id="vanMoving">
+                            <i class="fas fa-shuttle-van"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column - 6️⃣ Alert Panel -->
+            <div class="right-column">
+                <section class="card alert-panel">
+                    <h2 class="card-title">Live Alerts</h2>
+                    <div class="alerts-container">
+                        <div class="alert-item new">
+                            <i class="fas fa-battery-quarter"></i>
+                            <div>
+                                <h4>Battery Low</h4>
+                                <p>Nearby station available - 2.3km</p>
+                            </div>
+                            <span class="alert-time">Now</span>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-traffic-light"></i>
+                            <div>
+                                <h4>Traffic Detected</h4>
+                                <p>Recalculating route...</p>
+                            </div>
+                            <span class="alert-time">2 min</span>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-cloud-rain"></i>
+                            <div>
+                                <h4>Weather Alert</h4>
+                                <p>May reduce range by 8%</p>
+                            </div>
+                            <span class="alert-time">5 min</span>
+                        </div>
+                        <div class="alert-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div>
+                                <h4>Efficiency High</h4>
+                                <p>Regenerative braking optimal</p>
+                            </div>
+                            <span class="alert-time">10 min</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- 7️⃣ Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 ResQCharge Technologies — Smarter EV Journeys</p>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="batteryModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Battery Health Analysis</h3>
+            <div class="modal-body">
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>⚠️ Battery degrading fast due to frequent fast charging. Recommended service in 22 days.</p>
+                </div>
+                <div class="battery-graph-placeholder">
+                    <div class="graph-line"></div>
+                    <div class="graph-points">
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point"></span>
+                        <span class="point current"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="routeModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Route Optimized</h3>
+            <div class="modal-body">
+                <i class="fas fa-check-circle success-icon"></i>
+                <p>Route updated — saves 10% battery.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="vanModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Van Dispatched</h3>
+            <div class="modal-body">
+                <i class="fas fa-shuttle-van van-icon"></i>
+                <p>🚐 Van dispatched — arriving in 12 mins (₹300 service).</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
